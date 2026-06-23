@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CMG STUDIO</title>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #7C9A8B;
+    --navy: #1F2A44;
+    --cream: #F8F5F0;
+    --gold: #D4A373;
+    --charcoal: #333333;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+  }
+
+  .wrap {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 24px;
+  }
+
+  h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 42px;
+    letter-spacing: 2px;
+    margin: 0 0 12px;
+    color: var(--navy);
+  }
+
+  .sub {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    color: var(--sage);
+    margin-bottom: 36px;
+  }
+
+  .model-stage {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    max-width: 80vw;
+    max-height: 50vh;
+  }
+
+  .model-stage::before {
+    content: "";
+    position: absolute;
+    inset: 12%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(124, 154, 139, 0.18), transparent 70%);
+    z-index: 0;
+  }
+
+  model-viewer {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    --poster-color: transparent;
+  }
+
+  .footer {
+    margin-top: 36px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    opacity: 0.65;
+  }
+
+  .footer .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    animation: pulse 2.2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.4; transform: scale(0.85); }
+    50% { opacity: 1; transform: scale(1.15); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .footer .dot { animation: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>CMG STUDIO</h1>
+  <div class="sub">Creative. Personal. Meaningful.</div>
+
+  <div class="model-stage">
+    <model-viewer
+      camera-controls
+      touch-action="pan-y"
+      autoplay
+      animation-name="Running"
+      ar
+      ar-modes="webxr scene-viewer"
+      scale="0.2 0.2 0.2"
+      shadow-intensity="0.6"
+      src="https://modelviewer.dev/assets/boom_2_.glb" ar ar-placement="wall" camera-controls touch-action="pan-y" alt="A 3D model of some wall art"></model-viewer>
+  </div>
+
+  <div class="footer">
+    <span class="dot"></span>
+    Launching soon
+  </div>
+</div>                                                              
+</body>
+</html>
