@@ -33,8 +33,8 @@ Tagline: *Creative. Personal. Meaningful.*
 This is a single static HTML file with no dependencies or build step.
 
 ```bash
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+git clone https://github.com/ertwrx/cmg-studios.git
+cd cmg-studios
 ```
 
 Then just open `index.html` directly in a browser, or serve it locally:
